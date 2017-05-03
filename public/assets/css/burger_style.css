@@ -1,0 +1,38 @@
+h1, h2 {
+	text-align: center;
+}
+
+
+img {
+    display: block;
+    margin: auto;
+    width: 30%;
+}
+
+#formButton {
+	width: 250px;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.devourButton {
+	font-size: 25px
+	width: 30px;
+}
+
+#eatDiv {
+	background-color: red;
+	color: white;
+	padding: 20px;
+}
+
+#devouredDiv {
+	background-color: blue;
+	color: white;
+	padding: 20px;
+}
