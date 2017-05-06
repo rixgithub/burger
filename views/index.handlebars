@@ -1,68 +1,85 @@
 {{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
 
 {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
+<div class="container" id="wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-3">
+				<strong><h1>COME ON IN AND HAVE A DELICIOUS BURGER!</h1></strong>
+			</div>
 
-<img src="../assets/img/images.jpg" alt="Burger Face">
+			<div class="col-md-3">
+				<img src="../assets/img/images.jpg" alt="Burger Face" style>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
 
-<h1>Come on in and have a burger!</h1>
-
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">		
-			<div id="eatDiv">
-				<h2>Eat These Burgers!</h2>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">	
+				<h2>Eat These Burgers!</h2>	
 				
-				<ul>
-				  {{#each burgers}}
-				    {{#unless this.devoured}}
-				      <li>
-				      	{{this.id}}
-				        {{this.burger_name}}
-				        <form action="/{{this.id}}?_method=PUT" method="POST">
-				          <input type="hidden" name="devoured" value="true">
-				          <button type="submit" class="btn btn-outline-secondary btn-sm">Devour this Burger!</button>
-				        </form>
-				      </li>
-				       <br>
-				    {{/unless}}
-				  {{/each}}
-				</ul>
+				<div id="eatDiv">	
+					<div class="well">
+						<ul>
+						  {{#each burgers}}
+						    {{#unless this.devoured}}
+						      <li>
+						      	{{this.id}}
+						        {{this.burger_name}}
+						        <form action="/{{this.id}}?_method=PUT" method="POST">
+						          <input type="hidden" name="devoured" value="true">
+						          <button type="submit" id="{{this.id}}" class="btn btn-default btn-sm">Devour the {{this.burger_name}} Burger!</button>
+						        </form>
+						      </li>
+						       <br>
+						    {{/unless}}
+						  {{/each}}
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+			<h2>Devoured Burgers</h2>
+				
+				<div id="devouredDiv">		
+					<div class="well">
+						<ul>
+						  {{#each burgers}}
+						    {{#if this.devoured}}
+						      <li>
+						      	{{this.id}}
+						        {{this.burger_name}}
+						      </li>
+						    {{/if}}
+						  {{/each}}
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
+		
 
-		<div class="col-md-6">
-			<div id="devouredDiv">
-				<h2>Devoured Burgers</h2>
-
-				<ul>
-				  {{#each burgers}}
-				    {{#if this.devoured}}
-				      <li>
-				      	{{this.id}}
-				        {{this.burger_name}}
-				      </li>
-				    {{/if}}
-				  {{/each}}
-				</ul>
+		<div class="well">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="container" id="formButton">
+						<form action="/create" method="POST">
+							<div class="form-group">
+							    <label for="exampleTextarea">Enter a burger you want to eat and click the "Submit" button.</label>
+							    <textarea class="form-control" rows="2" name="burger_name"></textarea>
+						  	</div>
+						  	  
+					  	  	<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	
-	<div class="row">
-		<div class="col-md-12">
-			<div class="container" id="formButton">
-				<form action="/create" method="POST">
-					<div class="form-group">
-					    <label for="exampleTextarea">Enter a burger you want to eat and click the "Submit" button.</label>
-					    <textarea class="form-control" rows="2" name="burger_name"></textarea>
-				  	</div>
-				  	  
-			  	  	<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
-			</div>
-		</div>
-	</div>
-
 </div>
 
 

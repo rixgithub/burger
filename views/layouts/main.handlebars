@@ -6,9 +6,26 @@
 	<meta charset="UTF-8">
 		<link rel="stylesheet" href="../../assets/css/burger_style.css" type="text/css" />
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<title>Eat-Da-Burger!</title>
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous">
+	  	</script>
+	  	<script
+		  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+		  crossorigin="anonymous">
+	  	</script>
+		<title>Eat-That-Burger!</title>
 	</head>
 	<body>
 		{{{ body }}}
+
+		<script>
+			$( document ).click(function() {
+			  $( ".btn-sm" ).toggle( "fade" );
+			});
+		</script>
+ 
 	</body>
 </html>

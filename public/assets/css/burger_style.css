@@ -1,12 +1,19 @@
-h1, h2 {
-	text-align: center;
-}
 
+h1 {
+	text-align: center;
+} 
+
+h2 {
+	color: white;
+	text-align: center; 
+}
 
 img {
     display: block;
     margin: auto;
-    width: 30%;
+    width: 200px;
+    height: 200px;
+    border: black 5px;
 }
 
 #formButton {
@@ -26,13 +33,12 @@ ul {
 }
 
 #eatDiv {
-	background-color: red;
-	color: white;
+	background-color: gray;
 	padding: 20px;
 }
 
 #devouredDiv {
-	background-color: blue;
-	color: white;
+	background-color:
 	padding: 20px;
+	line-height: 400%;
 }
